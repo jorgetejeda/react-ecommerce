@@ -8,7 +8,7 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".js", "jsx"],
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -38,6 +38,6 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    port: 3000,
+    port: 3005,
   },
 };
