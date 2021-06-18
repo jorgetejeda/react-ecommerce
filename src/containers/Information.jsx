@@ -1,9 +1,8 @@
 import React, { useRef, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import '../styles/components/Information.css';
 
-const Information = (props) => {
+const Information = ({ history }) => {
   const {
     state: { cart },
     addToBuyer,
@@ -24,6 +23,7 @@ const Information = (props) => {
       phone: formData.get('phone'),
     };
     addToBuyer(buyer);
+    history.push('/checkout/payment');
   };
 
   return (
@@ -47,7 +47,7 @@ const Information = (props) => {
         </div>
         <div className="Information-buttons">
           <div className="Information-back">
-            <button type="button" onClick={() => props.history.goBack()}>
+            <button type="button" onClick={() => history.goBack()}>
               Regresar
             </button>
           </div>
