@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { PayPalButton } from 'react-paypal-button';
 import { AppContext } from '../context/AppContext';
 import { handleSumTotal } from '../utils/cartAmount';
+import { config } from '../config';
 import '../styles/components/Payment.css';
 
 const Payment = ({ history }) => {
@@ -12,7 +13,7 @@ const Payment = ({ history }) => {
 
   const paypalOptions = {
     // FIXME: corregir el clientID de paypal, not working
-    clientId: 'AWl20nuW6HkAmA1sSxsTvSjLN8e-ArEJ0gcGAv.mk89jSUpWzujTTDSb',
+    clientId: config.clientIdPaypal,
     intent: 'capture',
     currency: 'USD',
   };
