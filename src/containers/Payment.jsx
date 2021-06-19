@@ -12,7 +12,6 @@ const Payment = ({ history }) => {
   } = useContext(AppContext);
 
   const paypalOptions = {
-    // FIXME: corregir el clientID de paypal, not working
     clientId: config.clientIdPaypal,
     intent: 'capture',
     currency: 'USD',
@@ -24,8 +23,7 @@ const Payment = ({ history }) => {
   };
 
   const handlePaymentSuccess = (data) => {
-    console.log(data);
-    if (data.status === 'COMPLETE') {
+    if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
         product: cart,
